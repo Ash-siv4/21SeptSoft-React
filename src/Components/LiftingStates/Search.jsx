@@ -1,7 +1,8 @@
 
-//{query,queryFunction,completed,completedFunction}
-const Search = () => {
+// a child
+const Search = ({query, queryFunction, completed, completedFunction}) => {
 
+    
     
 return(
     <>
@@ -15,12 +16,12 @@ return(
     onChange={queryFunction}
     />
 
-    {/* <lable>Show completed:</lable>
+    <lable>Show completed:</lable>
     <input 
     type="checkbox"
     value ={completed}
     onChange={completedFunction}
-    /> */}
+    />
 
     </>
 )
