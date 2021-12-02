@@ -1,6 +1,6 @@
 
 //another child
-const List = ({ list, query, completed }) => {
+const List = ({ list, query, completed, notCompleted }) => {
   // console.log("The query is:",query);
 
 
@@ -18,6 +18,12 @@ const List = ({ list, query, completed }) => {
     }
   }
 
+  let incomplete = function complete(notCompleted){
+    return function (list){
+      return list.completed !== notCompleted;
+    }
+  }
+
   const filterQuery = (query) => (list) => list.title.includes(query);
   // console.log(filterQuery);
 
@@ -29,7 +35,10 @@ const List = ({ list, query, completed }) => {
   if (completed) {
     filteredList = list.filter(complete(completed)).filter(filterQuery(query))
   }
-  else {
+  else if(notCompleted) {
+    filteredList = list.filter(incomplete(notCompleted)).filter(filterQuery(query))
+  }
+  else{
     filteredList = list.filter(filterQuery(query))
   }
 

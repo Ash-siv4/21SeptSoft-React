@@ -18,6 +18,7 @@ import Nav from './Components/Routing/Nav';
 import Shop from './Components/Routing/Shop';
 import NotFound from './Components/Routing/NotFound';
 import User from './Components/Routing/User';
+import Tesco from './Components/DataRequests/Tesco';
 
 const App = () => {
 
@@ -36,6 +37,9 @@ const App = () => {
       {/* <TrueFalse/> */}
       {/* <Input/> */}
       {/* <Clock/> */}
+      {/* <a href="/">home</a>
+      <a href="/about">About</a>
+      <a href="/tesco">Tesco</a> */}
 
       {/* <Router>
         <Switch>
@@ -55,13 +59,18 @@ const App = () => {
           <Route path="/user/:id/:name">
             <User />
           </Route>
+          <Route path="/tesco">
+            <Tesco />
+          </Route>
           <Route>
-            <NotFound/>
+            <NotFound />
           </Route>
         </Switch>
       </Router> */}
 
-      <SearchableList/>
+      {/* <SearchableList/> */}
+
+      <Tesco />
 
       {/* <div className="App">
       <header className="App-header">

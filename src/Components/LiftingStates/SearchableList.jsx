@@ -8,6 +8,7 @@ const SearchableList = () => {
 
     const [q, setQ] = useState("");
     const [completed, setCompleted] = useState(false);
+    const [notCompleted, setNotCompleted] = useState(false);
 
     const qHandler = (e) =>{
         setQ(e.target.value);
@@ -19,10 +20,15 @@ const SearchableList = () => {
         // console.log(completed);
     }
 
+    const handleIncomplete = (e) => {
+        setNotCompleted(c=>!c);
+        console.log(notCompleted);
+    }
+
     return (
         <>
-        <Search query={q} queryFunction={qHandler} completed={completed} completedFunction={handleCompleted}/>
-        <List list={data} query={q} completed={completed}/>
+        <Search query={q} queryFunction={qHandler} completed={completed} completedFunction={handleCompleted} notCompleted={notCompleted} notCompletedFunction={handleIncomplete}/>
+        <List list={data} query={q} completed={completed} notCompleted={notCompleted}/>
         </>
     )
 
